@@ -1,0 +1,12 @@
+{
+  "name": "filmai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "PagrindinisLangas.html",
+  "scripts": {
+    "start": "http-server -p 8080 -a localhost"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
