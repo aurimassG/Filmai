@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filmo Nuoma</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-----------Header----------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PagrindinisLangas.html">Filmai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="UzsakymoKurimoLangas.html">Filmų nuoma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../UzsakymuSarasas/UzsakymoSarasuLangas.html">Užsakymai</a>
+                    </li>
+
+
+                </ul>
+                <div class="d-flex">
+                    <a href="../PagrindinisLangas.html" class="btn btn-primary">Atsijungti</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!----------Main----------->
+    <div class="container mt-5">
+        <form class="p-4 border" action="rent_process.php" method="POST">
+            <h2 class="mb-4">Filmo Nuoma</h2>
+
+            <div class="mb-3 form-check">
+                <input type="radio" class="form-check-input" id="physical" name="rent_type" value="physical" required>
+                <label class="form-check-label" for="physical">Nuomuoti fiziniu pavidalu</label>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="radio" class="form-check-input" id="online" name="rent_type" value="online">
+                <label class="form-check-label" for="online">Nuomuoti internetu</label>
+            </div>
+
+            <div id="movieSelection">
+                <div class="mb-3">
+                    <label for="movie" class="form-label">Pasirinkite filmą:</label>
+                    <select class="form-select" id="movie" required>
+                        <option value="">Pasirinkite...</option>
+                        <option value="movie1">Filmas 1</option>
+                        <option value="movie2">Filmas 2</option>
+                        <!-- Add more movie options -->
+                    </select>
+                    <button type="button" id="addMovie" class="btn btn-primary mt-2">Pridėti filmą</button>
+                </div>
+                <div class="mb-3">
+                    <label for="selectedMovies" class="form-label">Pasirinkti filmai:</label>
+                    <ul id="selectedMoviesList"></ul>
+                </div>
+            </div>
+            <div id="physicalDates" style="display: none;">
+                <div class="mb-3">
+                    <label for="order_date" class="form-label">Užsakymo data:</label>
+                    <input type="date" class="form-control" id="order_date" name="order_date">
+                </div>
+                <div class="mb-3">
+                    <label for="return_date" class="form-label">Grąžinimo data:</label>
+                    <input type="date" class="form-control" id="return_date" name="return_date">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Pasirinkite adresą:</label>
+                    <select class="form-select" id="address" name="address" required>
+                        <option value="">Pasirinkite...</option>
+                        <option value="address1">Adresas 1</option>
+                        <option value="address2">Adresas 2</option>
+                        <!-- Add more address options -->
+                    </select>
+                </div>
+            </div>
+            <div id="onlineDates" style="display: none;">
+                <div class="mb-3">
+                    <label for="rent_date" class="form-label">Nuomavimo data:</label>
+                    <input type="date" class="form-control" id="rent_date" name="rent_date" required>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="../PagrindinisLangas.html" class="btn btn-primary me-2">Atšaukti</a>
+                <a href="../PagrindinisLangas.html" class="btn btn-primary me-2">Užsakyti</a>
+                <button type="button" class="btn btn-primary" onclick="redirectToApmokejimoLangas()">Nuomoti Dabar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('physical').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('physicalDates').style.display = 'block';
+                document.getElementById('onlineDates').style.display = 'none';
+                document.getElementById('movieSelection').style.display = 'block';
+            }
+        });
+
+        document.getElementById('online').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('onlineDates').style.display = 'block';
+                document.getElementById('physicalDates').style.display = 'none';
+                document.getElementById('movieSelection').style.display = 'block';
+            }
+        });
+
+        const addMovieButton = document.getElementById('addMovie');
+        const movieSelect = document.getElementById('movie');
+        const selectedMoviesList = document.getElementById('selectedMoviesList');
+
+        addMovieButton.addEventListener('click', function () {
+            if (movieSelect.value !== '') {
+                const selectedMovie = movieSelect.options[movieSelect.selectedIndex].text;
+                const listItem = document.createElement('li');
+                listItem.textContent = selectedMovie;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Pašalinti';
+                removeButton.classList.add('btn', 'btn-danger', 'ms-2');
+                removeButton.onclick = function () {
+                    listItem.remove();
+                };
+                listItem.appendChild(removeButton);
+                selectedMoviesList.appendChild(listItem);
+            }
+        });
+
+        function redirectToApmokejimoLangas() {
+            window.location.href = 'ApmokejimoLangas.html';
+        }
+    </script>
+</body>
+
+</html>

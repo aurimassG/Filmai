@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apmokėjimo Langas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-----------Header----------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PagrindinisLangas.html">Filmai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="UzsakymoKurimoLangas.html">Filmų nuoma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../UzsakymuSarasas/UzsakymoSarasuLangas.html">Užsakymai</a>
+                    </li>
+
+
+                </ul>
+                <div class="d-flex">
+                    <a href="../PagrindinisLangas.html" class="btn btn-primary">Atsijungti</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!----------Main----------->
+    <div class="container mt-5">
+        <h2>Pasirinkite apmokėjimo būdą</h2>
+
+        <div class="mt-4">
+            <h4>Apmokėjimas kortele</h4>
+            <form action="card_payment_process.php" method="POST">
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label">Kortelės numeris</label>
+                    <input type="text" class="form-control" id="cardNumber" name="cardNumber"
+                        placeholder="Įveskite kortelės numerį" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiryDate" class="form-label">Galiojimo data</label>
+                    <input type="text" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YY"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" placeholder="Įveskite CVV" required>
+                </div>
+                <div class="mb-3">
+                    <label for="cardHolder" class="form-label">Kortelės savininkas</label>
+                    <input type="text" class="form-control" id="cardHolder" name="cardHolder"
+                        placeholder="Jūsų vardas pavardė" required>
+                </div>
+                <a href="UzsakymoKurimoLangas.html" class="btn btn-primary me-2">Atšaukti</a>
+                <button type="button" class="btn btn-primary" onclick="redirectToPagrindinisLangas()">Patvirtinti
+                    mokėjimą</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function redirectToPagrindinisLangas() {
+            window.location.href = '../PagrindinisLangas.html';
+        }
+    </script>
+</body>
+
+</html>
