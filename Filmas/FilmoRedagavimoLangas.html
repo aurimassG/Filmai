@@ -1,0 +1,150 @@
+<!doctype HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FISK</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/fa6d7669c1.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+    
+    <!-----------Header----------->
+    <section class="header-main border-bottom bg-white">
+        <div class="container-fluid">
+           <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+
+               <div class="col-md-8 offset-2">
+                    <div class="d-flex form-inputs">
+                        <input class="form-control" type="text" placeholder="Paieška" width="50">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-1">
+                    <div class="dropdown">
+                        <button class = "btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>   Žanrai
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Detektyvinis</a></li>
+                            <li><a class="dropdown-item" href="#">Komedija</a></li>
+                            <li><a class="dropdown-item" href="#">Nuotykiu</a></li>
+                            <li><a class="dropdown-item" href="#">Kriminalinis</a></li>
+                            <li><a class="dropdown-item" href="#">Istorinis</a></li>
+                            <li><a class="dropdown-item" href="#">Romantinis</a></li>
+                            <li><a class="dropdown-item" href="#">Siaubo</a></li>
+                            <li><a class="dropdown-item" href="#">Veiksmo</a></li>
+                            <li><a class="dropdown-item" href="#">Trileris</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <button type="button" class="btn btn-primary">Prisijungti</button>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!----------Main----------->
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column align-items-start w-50 my-5">					
+
+                <label for="id" class="form-label">ID:</label>
+                <input class="form-control" type="text" value="1" id="id">
+
+                <label for="pavadinimas" class="form-label">Pavadinimas:</label>
+                <input class="form-control" type="text" value="Filmas" id="pavadinimas">
+
+                <label for="aprasymas" class="form-label">Aprasymas:</label>
+                <textarea class="form-control" id="aprasymas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac est dolor. Vestibulum suscipit, elit ac ultrices ultricies, est lacus iaculis justo, sit amet varius risus nunc in nulla. Vivamus dignissim quam et porttitor sagittis.In ac dolor tempus, porta tortor non, vestibulum dolor. Praesent tincidunt tellus in ornare faucibus.Praesent et sem eget justo sollicitudin accumsan. Aliquam tristique, nisl a condimentum rhoncus, enim mi cursus nisl, et elementum tellus risus ut nisi.In sed pulvinar neque, sit amet consectetur odio. Duis ornare venenatis aliquet. Donec vel mi urna. Aenean libero dolor, gravida id luctus quis, tincidunt in sem. Nulla nulla velit, viverra eu quam ac, egestas egestas enim. Suspendisse sodales erat eu diam eleifend viverra.</textarea>
+
+                <label for="metai" class="form-label">Išleidimo metai:</label>
+                <input class="form-control" type="text" value="2006" id="metai">
+
+                <label for="trukme" class="form-label">Trukmė:</label>
+                <input class="form-control" type="text" value="2h 25m" id="trukme">
+
+                <label for="kaina" class="form-label">Sukūrimo kaina:</label>
+                <input class="form-control" type="text" value="60,000,000€" id="kaina">
+                
+                <label for="cenzas" class="form-label">Cenzas:</label>
+                <select class="form-select" id="cenzas">
+                    <option>V</option>
+                    <option>N-7</option>
+                    <option selected>N-13</option>
+                    <option>N-16</option>
+                    <option>N-18</option>
+                  </select>
+
+                <label for="studija" class="form-label">Studija:</label>
+                <input class="form-control" type="text" value="Filmo studija" id="studija">
+
+                <label class="form-label">Ar spalvotas:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="spalvotas" id="spalva1" checked>
+                    <label class="form-check-label" for="spalva1">Taip</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="spalvotas" id="spalva2">
+                    <label class="form-check-label" for="spalva2">Ne</label>
+                </div>
+
+                <label for="kalba" class="form-label">Kalba:</label>
+                <input class="form-control" type="text" value="Lietuvių" id="kalba">
+
+                <label for="subtitrai" class="form-label">Subtitrai:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subtitrai" id="sub1">
+                    <label class="form-check-label" for="sub1">Taip</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="subtitrai" id="sub2" checked>
+                    <label class="form-check-label" for="sub2">Ne</label>
+                </div>
+
+                <label for="pelnas" class="form-label">Pelnas:</label>
+                <input class="form-control" type="text" value="6€" id="pelnas">
+
+                <label for="fizinis" class="form-label">Ar fizinis:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fizinis" id="fiz1">
+                    <label class="form-check-label" for="fiz1">Taip</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fizinis" id="fiz2" checked>
+                    <label class="form-check-label" for="fiz2">Ne</label>
+                </div>
+
+                <label for="zanras" class="form-label">Žanras:</label>
+                <select class="form-select" id="zanras">
+                    <option>Detektyvinis</option>
+                    <option>Komedija</option>
+                    <option>Nuotykiu</option>
+                    <option>Kriminalinis</option>
+                    <option>Istorinis</option>
+                    <option>Romantinis</option>
+                    <option>Siaubo</option>
+                    <option selected>Veiksmo</option>
+                    <option>Trileris</option>
+                  </select>
+
+            </div>
+        </div>
+
+        <div className="d-flex justify-content-center align-items-center">
+            <a href="FilmoLangas.html"><button type="button" class="btn btn-primary mb-5">Išsaugoti</button></a>
+            <a href="FilmoLangas.html"><button type="button" class="btn btn-primary mb-5">Atšaukti</button></a>
+        </div>
+
+    </body>
+</html>
