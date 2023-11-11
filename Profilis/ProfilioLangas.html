@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <!-----------Header----------->
+    <section class="header-main border-bottom bg-white">
+        <div class="container-fluid">
+           <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+
+               <div class="col-md-8 offset-2">
+                    <div class="d-flex form-inputs">
+                        <input class="form-control" type="text" placeholder="Paieška" width="50">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-1">
+                    <div class="dropdown">
+                        <button class = "btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>   Žanrai
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Detektyvinis</a></li>
+                            <li><a class="dropdown-item" href="#">Komedija</a></li>
+                            <li><a class="dropdown-item" href="#">Nuotykiu</a></li>
+                            <li><a class="dropdown-item" href="#">Kriminalinis</a></li>
+                            <li><a class="dropdown-item" href="#">Istorinis</a></li>
+                            <li><a class="dropdown-item" href="#">Romantinis</a></li>
+                            <li><a class="dropdown-item" href="#">Siaubo</a></li>
+                            <li><a class="dropdown-item" href="#">Veiksmo</a></li>
+                            <li><a class="dropdown-item" href="#">Trileris</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <button type="button" class="btn btn-primary">Prisijungti</button>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Petras Petraitis</h2>
+                        <ul class="list-group list-group-flush text-start">
+                            <li class="list-group-item">Naudotojo vardas: Naudotojas</li>
+                            <li class="list-group-item">E-paštas: emailas@gmail.com</li>
+                            <li class="list-group-item">Adresai:
+                                <ul>
+                                    <li>
+                                        <strong>Adresas 1:</strong>
+                                        <ul>
+                                            <li>Šalis: Lietuva</li>
+                                            <li>Miestas: Kaunas</li>
+                                            <li>Gatvė: Studentų g.</li>
+                                            <li>Namo numeris: 50</li>
+                                            <li>Pašto kodas: 12345</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <strong>Adresas 2:</strong>
+                                        <ul>
+                                            <li>Šalis: Latvia</li>
+                                            <li>Miestas: Rīga</li>
+                                            <li>Gatvė: Skanstes iela</li>
+                                            <li>Namo numeris: 25</li>
+                                            <li>Pašto kodas: LV-1013</li>
+                                        </ul>
+                                    </li>
+                                    <!-- Add more addresses as needed -->
+                                </ul>
+                            </li>
+                            <li class="list-group-item">Gimimo data: 1970-01-01</li>
+                        </ul>
+                        <a href="ProfilioRedagavimoLangas.html" class="btn btn-primary mt-3">Redaguoti profilį</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
