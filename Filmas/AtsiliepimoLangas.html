@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atsiliepimo Langas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-----------Header----------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PagrindinisLangas.html">Filmai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="UzsakymoKurimoLangas.html">Filmų nuoma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../UzsakymuSarasas/UzsakymoSarasuLangas.html">Užsakymai</a>
+                    </li>
+
+
+                </ul>
+                <div class="d-flex">
+                    <a href="../Profilis/ProfilioLangas.html" class="btn btn-primary me-2">Profilis</a>
+                    <a href="../PagrindinisLangasPav.html" class="btn btn-primary">Atsijungti</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-----------Main----------->
+    <div class="container mt-5">
+        <form class="p-4 border" action="FilmoLangas.html" method="POST">
+            <h2>Palikite atsiliepimą</h2>
+            <div class="mb-3 form-check">
+                <label for="įvertinimas" class="form-label">Įvertinimas</label>
+                <input type="text" class="form-control" id="įvertinimas" name="įvertinimas"
+                    placeholder="Įveskite įvertinimą 0-10 (8.6, 3.2, etc...)" required>
+            </div>
+            <div class="container" style="margin: 10px;">
+                <a style="padding-right: 30px;">Komentaras</a>
+                <div class="text">
+                    <textarea for="tekstas" type="text" class="form-control" maxlength="500"
+                        style="height: 300px; width: 600px; resize: none;" aria-describedby="basic-addon2"
+                        required></textarea>
+                </div>
+            </div>
+            <a href="FilmoLangas.html" style="padding-left: 20px;"><button type="submit"
+                    class="btn btn-primary mb-5 mt-3 text-center">Palikti atsiliepimą</button></a>
+        </form>
+    </div>
+</body>
+</html>
