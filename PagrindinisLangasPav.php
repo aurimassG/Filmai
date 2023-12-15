@@ -67,7 +67,7 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <a href="Profilis/ProfilioLangas.html" class="btn btn-primary me-2">Profilis</a>
+                    <a href="Profilis/ProfilioLangas.php" class="btn btn-primary me-2">Profilis</a>
                     <a href="RegistracijosLangas.html" class="btn btn-primary me-2">Registracija</a>
                     <a href="Prisijungimas/PrisijungimoLangas.php" class="btn btn-primary">Prisijungti</a>
                 </div>
